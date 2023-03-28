@@ -23,7 +23,7 @@ func (w *werror) Error() string {
 }
 
 func (w *werror) Format(s fmt.State, verb rune) {
-	io.WriteString(s, w.Error())
+	_, _ = io.WriteString(s, w.Error())
 }
 
 func (w *werror) Unwrap() error { return w.cause }
